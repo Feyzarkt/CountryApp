@@ -10,7 +10,7 @@ import com.huawei.countryapp.databinding.ItemCountryBinding
 import com.huawei.countryapp.model.Country
 import com.huawei.countryapp.util.downloadURL
 
-class CountryAdapter(private var countryList: ArrayList<Country>): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
+class CountryAdapter(private var countryList: ArrayList<Country>, private var onClick: (position: Int)->Unit): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
     class CountryViewHolder(var view: ItemCountryBinding): RecyclerView.ViewHolder(view.root)
 
@@ -29,6 +29,9 @@ class CountryAdapter(private var countryList: ArrayList<Country>): RecyclerView.
         holder.view.countryTV.text = countryList[position].name
         holder.view.regionTV.text = countryList[position].region
 
+        holder.view.cvItem.setOnClickListener {
+            onClick(position)
+        }
 //        Glide.with(holder.view.root)
 //            .load(countryList[position].flagUrl)
 //            .into(holder.view.countryIV)
