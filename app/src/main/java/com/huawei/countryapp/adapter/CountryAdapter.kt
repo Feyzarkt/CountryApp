@@ -3,12 +3,15 @@ package com.huawei.countryapp.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.huawei.countryapp.R
 import com.huawei.countryapp.databinding.ItemCountryBinding
 import com.huawei.countryapp.model.Country
 import com.huawei.countryapp.util.downloadURL
+import com.huawei.countryapp.view.MainActivity
+import com.huawei.countryapp.view.home.HomeFragment
 
 class CountryAdapter(private var countryList: ArrayList<Country>, private var onClick: (position: Int)->Unit): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
@@ -30,6 +33,11 @@ class CountryAdapter(private var countryList: ArrayList<Country>, private var on
         holder.view.regionTV.text = countryList[position].region
 
         holder.view.cvItem.setOnClickListener {
+            if(HomeFragment.interstitialAd!=null && HomeFragment.interstitialAd!!.isLoaded){
+                HomeFragment.interstitialAd!!.show(MainActivity.activity)
+            }else {
+                Toast.makeText(holder.view.root.context, "Ad did not load", Toast.LENGTH_SHORT).show()
+            }
             onClick(position)
         }
 //        Glide.with(holder.view.root)
