@@ -15,6 +15,11 @@ navigationFragmentKtx = "2.7.7"
 navigationUiKtx = "2.7.7"
 room = "2.6.1"
 navigationSafeargs = "2.7.7"
+agconnect = "1.9.1.302"
+agconnect-agcp = "1.7.1.300"
+gradle = "8.0.0"
+adsPrime = "3.4.71.300"
+push = "6.11.0.300"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,6 +38,11 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+agconnect-core = { group = "com.huawei.agconnect", name = "agconnect-core", version.ref = "agconnect" }
+agconnect-agcp = { group = "com.huawei.agconnect", name = "agcp", version.ref = "agconnect-agcp" }
+tools-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+huawei-ads-prime = { group = "com.huawei.hms", name = "ads-prime", version.ref = "adsPrime" }
+huawei-push = { group = "com.huawei.hms", name = "push", version.ref = "push" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -40,5 +50,6 @@ jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "k
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 androidx-navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationSafeargs"}
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize",  version.ref = "kotlin"  }
+agconnect = { id = "com.huawei.agconnect", version.ref = "agconnect-agcp" }
 
 
